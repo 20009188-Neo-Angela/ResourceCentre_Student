@@ -13,7 +13,6 @@ public class Item {
 	}
 
 	public String getAssetTag() {
-		// trying
 		return assetTag;
 	}
 
