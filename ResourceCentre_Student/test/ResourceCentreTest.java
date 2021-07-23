@@ -176,19 +176,19 @@ public class ResourceCentreTest {
 				assertNotNull("Test if there is valid ChromeBook arrayList to load From", chromebookList);
 				ResourceCentre.addChromebook(chromebookList, cb1);
 				
-				Boolean valid = ResourceCentre.doLoanChromebook(chromebookList, "CB0001", "8-8-2020");
+				Boolean valid = ResourceCentre.doLoanChromebook(chromebookList, "CC001", "8-8-2020");
 				assertTrue("Test if an item is available to loan", valid);
 				
-				valid = ResourceCentre.doLoanChromebook(chromebookList, "CB0001", "8-8-2020");
+				valid = ResourceCentre.doLoanChromebook(chromebookList, "CC001", "8-8-2020");
 				assertFalse("Test if an item is NOT available for load", valid);
 				
 				ResourceCentre.addChromebook(chromebookList, cb2);
 				cb2.setIsAvailable(false);
-				valid = ResourceCentre.doLoanChromebook(chromebookList, "CB002", "8-8-2020");
+				valid = ResourceCentre.doLoanChromebook(chromebookList, "CC002", "8-8-2020");
 				assertFalse("Test that item is unavailable for loan", valid);
 				
 				//error condition 
-				valid = ResourceCentre.doLoanChromebook(chromebookList, "CB002", "8-8-2020");
+				valid = ResourceCentre.doLoanChromebook(chromebookList, "CC002", "8-8-2020");
 				assertFalse("Test that item does not exist and is unavailable for loan", valid);
 		
 	}
