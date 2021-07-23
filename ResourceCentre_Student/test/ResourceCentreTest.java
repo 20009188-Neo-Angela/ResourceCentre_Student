@@ -166,7 +166,7 @@ public class ResourceCentreTest {
 		//Kidson
 		
 		//boundary condition
-		assertNotNull("Test if there is valid Chromebook arraylist to load From", chromebookList);
+		assertNotNull("Test if there is valid Chromebook arraylist to loan from", chromebookList);
 		
 		ResourceCentre.addChromebook(chromebookList, cb1);
 		
