@@ -67,9 +67,8 @@ public class ResourceCentreTest {
 				//Add another item. test The size of the list is 2?
 				ResourceCentre.addChromebook(chromebookList, cb2);
 				assertEquals("Test that Chromebook arraylist size is 2?", 2, chromebookList.size());
-//				assertNotNull("Test if there is valid Camcorder arraylist to add to", chromebookList);
+		assertNotNull("Test if there is valid Camcorder arraylist to add to", chromebookList);
 
-<<<<<<< HEAD
 		// Given an list that have already 2 elements inside, after adding 1 item, the size of the list is 3
 		ResourceCentre.addChromebook(chromebookList, cb1);
 		assertEquals("Test if that Chromebook arraylist size is 3?", 3, chromebookList.size());
@@ -80,18 +79,6 @@ public class ResourceCentreTest {
 		// Add another item. test The size of the list is 4?
 		ResourceCentre.addChromebook(chromebookList, cb2);
 		assertEquals("Test that Chromebook arraylist size is 4?", 4, chromebookList.size());
-=======
-//				// Given an empty list, after adding 1 item, the size of the list is 1
-//				ResourceCentre.addChromebook(chromebookList, cb2);
-//				assertEquals("Test if that Chromebook arraylist size is 3?", 3, chromebookList.size());
-//			
-//				// The item just added is as same as the first item of the list
-//				assertSame("Test that Chromebook is added same as 1st item of the list?", cb1, chromebookList.get(0));
-//
-//				// Add another item. test The size of the list is 2?
-//				ResourceCentre.addChromebook(chromebookList, cb2);
-//				assertEquals("Test that Chromebook arraylist size is 2?", 2, chromebookList.size());
->>>>>>> branch 'master' of https://github.com/20009188-Neo-Angela/ResourceCentre_Student.git
 	}
 
 	@Test
@@ -114,13 +101,8 @@ public class ResourceCentreTest {
 		// from the SourceCentre
 		allCamcorder = ResourceCentre.retrieveAllCamcorder(camcorderList);
 
-<<<<<<< HEAD
 		testOutput = String.format("%-12s %-22s %-15s %-15s %-7d\n", "CC0011", "Nikon HDSLR", "Yes", "", 40);
 		testOutput += String.format("%-12s %-22s %-15s %-15s %-7d\n", "CC0012", "Sony DSC-RX100M7", "Yes", "", 20);
-=======
-		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n", "CC0011", "Nikon HDSLR", "Yes", "", 40);
-		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n", "CC0012", "Sony DSC-RX100M7", "Yes", "", 20);
->>>>>>> branch 'master' of https://github.com/20009188-Neo-Angela/ResourceCentre_Student.git
 
 		assertEquals("Check that ViewAllCamcorderlist", testOutput, allCamcorder);
 
@@ -149,13 +131,8 @@ public class ResourceCentreTest {
 		// from the SourceCentre
 		allChromebook = ResourceCentre.retrieveAllChromebook(chromebookList);
 
-<<<<<<< HEAD
 		testOutput = String.format("%-12s %-22s %-15s %-15s %-7s\n", "CB0011", "My Google Chromebook 1st", "Yes", "", "Mac OS");
 		testOutput += String.format("%-12s %-22s %-15s %-15s %-7s\n", "CB0012", "SAMSUNG Chromebook 4+", "Yes", "", "Win 10");
-=======
-		testOutput += String.format("%-10s %-30s %-10s %-10s %-10s\n", "CB0011", "My Google Chromebook 1st", "yes", "", "Mac OS");
-		testOutput += String.format("%-10s %-30s %-10s%-10s  %-10s\n", "CB0012", "SAMSUNG Chromebook 4+", "Yes", "","Win 10" );
->>>>>>> branch 'master' of https://github.com/20009188-Neo-Angela/ResourceCentre_Student.git
 
 		assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
 
@@ -199,18 +176,10 @@ public class ResourceCentreTest {
 				assertNotNull("Test if there is valid ChromeBook arrayList to load From", chromebookList);
 				ResourceCentre.addChromebook(chromebookList, cb1);
 				
-<<<<<<< HEAD
 				Boolean valid = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "8-8-2020");
-=======
-				Boolean valid = ResourceCentre.doLoanChromebook(chromebookList, "CB001", "8-8-2020");
->>>>>>> branch 'master' of https://github.com/20009188-Neo-Angela/ResourceCentre_Student.git
 				assertTrue("Test if an item is available to loan", valid);
 				
-<<<<<<< HEAD
 				valid = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "8-8-2020");
-=======
-				valid = ResourceCentre.doLoanChromebook(chromebookList, "CB001", "8-8-2020");
->>>>>>> branch 'master' of https://github.com/20009188-Neo-Angela/ResourceCentre_Student.git
 				assertFalse("Test if an item is NOT available for load", valid);
 				
 				ResourceCentre.addChromebook(chromebookList, cb2);
@@ -219,11 +188,7 @@ public class ResourceCentreTest {
 				assertFalse("Test that item is unavailable for loan", valid);
 				
 				//error condition 
-<<<<<<< HEAD
 				valid = ResourceCentre.doLoanChromebook(chromebookList, "CB0012", "8-8-2020");
-=======
-				valid = ResourceCentre.doLoanChromebook(chromebookList, "CB003", "8-8-2020");
->>>>>>> branch 'master' of https://github.com/20009188-Neo-Angela/ResourceCentre_Student.git
 				assertFalse("Test that item does not exist and is unavailable for loan", valid);
 		
 	}
@@ -265,24 +230,18 @@ public class ResourceCentreTest {
 				ResourceCentre.addChromebook(chromebookList, cb1);
 				
 				//error
-				Boolean isFound = ResourceCentre.doReturnChromebook(chromebookList, "CB001");
-				assertFalse("Test if available chromebook CB001 is returned", isFound);
+				Boolean isFound = ResourceCentre.doReturnChromebook(chromebookList, "CB0011");
+				assertFalse("Test if available chromebook CB0011 is returned", isFound);
 				
 				//normal 
 				ResourceCentre.addChromebook(chromebookList, cb2);
-<<<<<<< HEAD
 				cc2.setIsAvailable(false);
 				isFound = ResourceCentre.doReturnChromebook(chromebookList, "CB0012");
 				assertFalse("Test if loaned out chromebook CB0012 is returned" , isFound);
-=======
-				cb2.setIsAvailable(false);
-				isFound = ResourceCentre.doReturnChromebook(chromebookList, "CB002");
-				assertTrue("Test if loaned out chromebook CB002 is returned" , isFound);
->>>>>>> branch 'master' of https://github.com/20009188-Neo-Angela/ResourceCentre_Student.git
 				
 				//error
-				isFound = ResourceCentre.doReturnChromebook(chromebookList, "CB003");
-				assertFalse("Test if non-existing chromebook CB003 is returned", isFound);
+				isFound = ResourceCentre.doReturnChromebook(chromebookList, "CB0013");
+				assertFalse("Test if non-existing chromebook CB0013 is returned", isFound);
 
 }
 
