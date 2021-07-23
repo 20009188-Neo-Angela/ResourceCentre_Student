@@ -84,6 +84,7 @@ public class ResourceCentreTest {
 	@Test
 	public void testRetrieveAllCamcorder() {
 		// Test if Item list is not null but empty, so that can add a new item
+		
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
 
 		// test if the list of camcorders retrieved from the SourceCentre is empty
@@ -111,6 +112,8 @@ public class ResourceCentreTest {
 	public void testRetrieveAllChromebook() {
 		// fail("Not yet implemented");
 		// write your code here
+		//syaz
+		
 		// Test if Item list is not null but empty, so that can add a new item
 		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
 
@@ -128,9 +131,8 @@ public class ResourceCentreTest {
 		// from the SourceCentre
 		allChromebook = ResourceCentre.retrieveAllChromebook(chromebookList);
 
-		testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n", "CB0011", "My Google Chromebook 1st", "Mac OS",
-				40);
-		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n", "CB0012", "SAMSUNG Chromebook 4+", "Win 10", 20);
+		testOutput = String.format("%-10s %-30s %-10s %-20d\n", "CB0011", "My Google Chromebook 1st", "Mac OS",40);
+		testOutput += String.format("%-10s %-30s %-10s %-20d\n", "CB0012", "SAMSUNG Chromebook 4+", "Win 10", 20);
 
 		assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
 
@@ -153,6 +155,8 @@ public class ResourceCentreTest {
 		assertFalse("Test if an same item is NOT available for loan", valid);
 		
 		//error condition 
+		ResourceCentre.addCamcorder(camcorderList, cc2);
+		cc2.setIsAvailable(false);
 		valid = ResourceCentre.doLoanCamcorder(camcorderList, "CC0012", "8-8-2020");
 		assertFalse("Test that item is unavailable for loan", valid);
 		
@@ -168,6 +172,25 @@ public class ResourceCentreTest {
 	public void testDoLoanChromebook() {
 		// fail("Not yet implemented");
 		// write your code here
+		//Kidson
+				assertNotNull("Test if there is valid ChromeBook arrayList to load From", chromebookList);
+				ResourceCentre.addChromebook(chromebookList, cb1);
+				
+				Boolean valid = ResourceCentre.doLoanChromebook(chromebookList, "CB0001", "8-8-2020");
+				assertTrue("Test if an item is available to loan", valid);
+				
+				valid = ResourceCentre.doLoanChromebook(chromebookList, "CB0001", "8-8-2020");
+				assertFalse("Test if an item is NOT available for load", valid);
+				
+				ResourceCentre.addChromebook(chromebookList, cb2);
+				cb2.setIsAvailable(false);
+				valid = ResourceCentre.doLoanChromebook(chromebookList, "CB002", "8-8-2020");
+				assertFalse("Test that item is unavailable for loan", valid);
+				
+				//error condition 
+				valid = ResourceCentre.doLoanChromebook(chromebookList, "CB002", "8-8-2020");
+				assertFalse("Test that item does not exist and is unavailable for loan", valid);
+		
 	}
 
 	@Test
