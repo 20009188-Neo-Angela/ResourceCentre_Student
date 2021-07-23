@@ -131,9 +131,8 @@ public class ResourceCentreTest {
 		// from the SourceCentre
 		allChromebook = ResourceCentre.retrieveAllChromebook(chromebookList);
 
-		testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n", "CB0011", "My Google Chromebook 1st", "Mac OS",
-				40);
-		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n", "CB0012", "SAMSUNG Chromebook 4+", "Win 10", 20);
+		testOutput = String.format("%-10s %-30s %-10s %-20d\n", "CB0011", "My Google Chromebook 1st", "Mac OS",40);
+		testOutput += String.format("%-10s %-30s %-10s %-20d\n", "CB0012", "SAMSUNG Chromebook 4+", "Win 10", 20);
 
 		assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
 
@@ -156,6 +155,8 @@ public class ResourceCentreTest {
 		assertFalse("Test if an same item is NOT available for loan", valid);
 		
 		//error condition 
+		ResourceCentre.addCamcorder(camcorderList, cc2);
+		cc2.setIsAvailable(false);
 		valid = ResourceCentre.doLoanCamcorder(camcorderList, "CC0012", "8-8-2020");
 		assertFalse("Test that item is unavailable for loan", valid);
 		
@@ -180,6 +181,8 @@ public class ResourceCentreTest {
 				valid = ResourceCentre.doLoanChromebook(chromebookList, "CB0001", "8-8-2020");
 				assertFalse("Test if an item is NOT available for load", valid);
 				
+				ResourceCentre.addChromebook(chromebookList, cb2);
+				cb2.setIsAvailable(false);
 				valid = ResourceCentre.doLoanChromebook(chromebookList, "CB002", "8-8-2020");
 				assertFalse("Test that item is unavailable for loan", valid);
 				
