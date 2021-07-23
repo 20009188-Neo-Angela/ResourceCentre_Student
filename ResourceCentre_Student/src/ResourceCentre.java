@@ -180,7 +180,7 @@ public class ResourceCentre {
 	public static void addCamcorder(ArrayList<Camcorder> camcorderList, Camcorder cc) {
 		
 		camcorderList.add(cc);
-		System.out.println("Camcorder added");
+		System.out.println("Camcorder added!");
 	}
 	
 	public static Chromebook inputChromebook() {	
@@ -199,7 +199,7 @@ public class ResourceCentre {
 		// write your code here
 		//Angela
 		chromebookList.add(cb);
-		System.out.println("Chromebook added");
+		System.out.println("Chromebook added!");
 		
 	}
 	
@@ -229,7 +229,7 @@ public class ResourceCentre {
 		if (isLoaned == false) {
 			System.out.println("Invalid asset tag");
 		} else {
-			System.out.println("Camcorder " + tag + " loaned out");
+			System.out.println("Camcorder " + tag + " loaned out.");
 		}
 	}
 	
@@ -262,7 +262,7 @@ public class ResourceCentre {
 		if (isLoaned == false) {
 			System.out.println("Invalid asset tag");
 		} else {
-			System.out.println("Chromebook " + tag + " loaned out");
+			System.out.println("Chromebook " + tag + " loaned out.");
 		}
 		
 	}
@@ -291,7 +291,7 @@ public class ResourceCentre {
 		if (isReturned == false) {
 			System.out.println("Invalid asset tag");
 		} else {
-			System.out.println("Camcorder " + tag + " returned");
+			System.out.println("Camcorder " + tag + " returned!");
 		}
 	}
 
@@ -323,7 +323,7 @@ public class ResourceCentre {
 				chromebookList.get(i).setIsAvailable(true);
 				chromebookList.get(i).setDueDate("");
 				isFound = true;
-				System.out.println("Chromebook " + asset + "returned!");
+				System.out.println("Chromebook " + asset + " returned!");
 			}
 		}
 		if (isFound == false) {
