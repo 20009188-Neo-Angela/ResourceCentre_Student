@@ -127,7 +127,27 @@ public class ResourceCentreTest {
 	public void testDoLoanCamcorder() {
 		// fail("Not yet implemented");
 		// write your code here
-
+		//yt
+		assertNotNull("Test if there is valid Chromebook arraylist to loan from", camcorderList);
+		ResourceCentre.addCamcorder(camcorderList, cc1);
+		
+		//normal
+		Boolean valid = ResourceCentre.doLoanCamcorder(camcorderList,  "CC0011", "8-8-2020");
+		assertTrue("Test if an item is available to loan", valid);
+		
+		//error condition 
+		valid = ResourceCentre.doLoanCamcorder(camcorderList,  "CC0011", "8-8-2020");
+		assertFalse("Test if an same item is NOT available for loan", valid);
+		
+		//error condition 
+		valid = ResourceCentre.doLoanCamcorder(camcorderList, "CC0012", "8-8-2020");
+		assertFalse("Test that item is unavailable for loan", valid);
+		
+		//error condition 
+		valid = ResourceCentre.doLoanCamcorder(camcorderList, "CC0013", "8-8-2020");
+		assertFalse("Test that item does not exist and is unavailable for loan", valid);
+		
+		
 	}
 
 	@Test
