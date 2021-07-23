@@ -167,7 +167,7 @@ public class ResourceCentreTest {
 	public void testDoLoanChromebook() {
 		// fail("Not yet implemented");
 		// write your code here
-		//Kidson Oh
+		//Kidson
 		assertNotNull("Test if there is valid ChromeBook arrayList to load From", chromebookList);
 		ResourceCentre.addChromebook(chromebookList, cb1);
 		
