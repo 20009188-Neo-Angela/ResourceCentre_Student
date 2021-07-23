@@ -146,8 +146,7 @@ public class ResourceCentre {
 
 	public static String retrieveAllChromebook(ArrayList<Chromebook> chromebookList) {
 		String output = "";
-		// write your code here please!!
-		// YT
+		// write your code here
 		return output;
 	}
 	public static void viewAllChromebook(ArrayList<Chromebook> chromebookList) {
@@ -214,7 +213,6 @@ public class ResourceCentre {
 	
 	public static boolean doLoanChromebook(ArrayList<Chromebook> chromebookList, String tag, String dueDate) {
 		// write your code here
-		// Kidson
 		return true;
 	}
 	public static void loanChromebook(ArrayList<Chromebook> chromebookList) {
@@ -254,7 +252,6 @@ public class ResourceCentre {
 	public static boolean doReturnChromebook(ArrayList<Chromebook> chromebookList,String tag){
 		boolean isReturned = false;
 		// write your code here 
-		// Hannah
 		return isReturned;
 	}
 	public static void returnChromebook(ArrayList<Chromebook> chromebookList) {
