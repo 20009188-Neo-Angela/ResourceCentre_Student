@@ -140,7 +140,7 @@ public class ResourceCentreTest {
 		
 		//normal condition
 		Boolean valid = ResourceCentre.doLoanCamcorder(camcorderList,  "CC0011", "8-8-2020");
-		assertTrue("Test if an item is available to loan", valid);
+		assertTrue("Test if an item is still available for loan", valid);
 		
 		//error condition 
 		valid = ResourceCentre.doLoanCamcorder(camcorderList,  "CC0011", "8-8-2020");
@@ -150,11 +150,11 @@ public class ResourceCentreTest {
 		ResourceCentre.addCamcorder(camcorderList, cc2);
 		cc2.setIsAvailable(false);
 		valid = ResourceCentre.doLoanCamcorder(camcorderList, "CC0012", "8-8-2020");
-		assertFalse("Test that item is unavailable for loan", valid);
+		assertFalse("Test that unavailable item is NOT ok for loan", valid);
 		
 		//error condition 
 		valid = ResourceCentre.doLoanCamcorder(camcorderList, "CC0013", "8-8-2020");
-		assertFalse("Test that item does not exist and is unavailable for loan", valid);
+		assertFalse("Test that non-existing item is unavailable for loan", valid);
 		
 		
 	}
@@ -172,21 +172,21 @@ public class ResourceCentreTest {
 		
 		//normal condition
 		Boolean valid = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "8-8-2020");
-		assertTrue("Test if an item is available to loan", valid);
+		assertTrue("Test if an item is still available to loan", valid);
 		
 		//error condition
 		valid = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "8-8-2020");
-		assertFalse("Test if an item is NOT available for load", valid);
+		assertFalse("Test if an same item is NOT available for loan", valid);
 		
 		//error condition
 		ResourceCentre.addChromebook(chromebookList, cb2);
 		cb2.setIsAvailable(false);
 		valid = ResourceCentre.doLoanChromebook(chromebookList, "CB0012", "8-8-2020");
-		assertFalse("Test that item is unavailable for loan", valid);
+		assertFalse("Test that unavailable item is NOT ok for loan", valid);
 
 		//error condition 
 		valid = ResourceCentre.doLoanChromebook(chromebookList, "CB0012", "8-8-2020");
-		assertFalse("Test that item does not exist and is unavailable for loan", valid);
+		assertFalse("Test that non-existing item is unavailable for loan", valid);
 
 	}
 
