@@ -142,8 +142,8 @@ public class ResourceCentreTest {
 	public void testDoLoanCamcorder() {
 		// fail("Not yet implemented");
 		// write your code here
-		//yt 
-		assertNotNull("Test if there is valid Chromebook arraylist to loan from", camcorderList);
+		//yt  
+		assertNotNull("Test if there is valid Camcorder arraylist to loan from", camcorderList);
 		ResourceCentre.addCamcorder(camcorderList, cc1);
 		
 		//normal
