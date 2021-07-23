@@ -24,8 +24,8 @@ public class ResourceCentreTest {
 		// prepare test data
 		cc1 = new Camcorder("CC0011", "Nikon HDSLR", 40);
 		cc2 = new Camcorder("CC0012", "Sony DSC-RX100M7", 20);
-		cb1 = new Chromebook("CB0011", "My Google Chromebook 1st", "Mac OS");
-		cb2 = new Chromebook("CB0012", "SAMSUNG Chromebook 4+", "Win 10");
+		cb1 = new Chromebook("CB001", "My Google Chromebook 1st", "Mac OS");
+		cb2 = new Chromebook("CB002", "SAMSUNG Chromebook 4+", "Win 10");
 
 		camcorderList = new ArrayList<Camcorder>();
 		chromebookList = new ArrayList<Chromebook>();
@@ -66,7 +66,10 @@ public class ResourceCentreTest {
 				
 				//Add another item. test The size of the list is 2?
 				ResourceCentre.addChromebook(chromebookList, cb2);
+
 				assertEquals("Test that Chromebook arraylist size is 2?", 2, chromebookList.size());
+
+		assertEquals("Test that Chromebook arraylist size is 2?", 2, chromebookList.size());
 		assertNotNull("Test if there is valid Camcorder arraylist to add to", chromebookList);
 
 		// Given an list that have already 2 elements inside, after adding 1 item, the size of the list is 3
@@ -79,6 +82,7 @@ public class ResourceCentreTest {
 		// Add another item. test The size of the list is 4?
 		ResourceCentre.addChromebook(chromebookList, cb2);
 		assertEquals("Test that Chromebook arraylist size is 4?", 4, chromebookList.size());
+
 	}
 
 	@Test
@@ -104,7 +108,7 @@ public class ResourceCentreTest {
 		testOutput = String.format("%-12s %-22s %-15s %-15s %-7d\n", "CC0011", "Nikon HDSLR", "Yes", "", 40);
 		testOutput += String.format("%-12s %-22s %-15s %-15s %-7d\n", "CC0012", "Sony DSC-RX100M7", "Yes", "", 20);
 
-		assertEquals("Check that ViewAllCamcorderlist", testOutput, allCamcorder);
+		assertEquals("Check that viewAllCamcorder", testOutput, allCamcorder);
 
 	}
 
@@ -131,10 +135,15 @@ public class ResourceCentreTest {
 		// from the SourceCentre
 		allChromebook = ResourceCentre.retrieveAllChromebook(chromebookList);
 
+
+		testOutput += String.format("%-10s %-30s %-10s %-10s %-10s\n", "CB001", "My Google Chromebook 1st", "yes", "", "Mac OS");
+		testOutput += String.format("%-10s %-30s %-10s%-10s  %-10s\n", "CB002", "SAMSUNG Chromebook 4+", "Yes", "","Win 10" );
+
 		testOutput = String.format("%-12s %-22s %-15s %-15s %-7s\n", "CB0011", "My Google Chromebook 1st", "Yes", "", "Mac OS");
 		testOutput += String.format("%-12s %-22s %-15s %-15s %-7s\n", "CB0012", "SAMSUNG Chromebook 4+", "Yes", "", "Win 10");
 
-		assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
+
+		assertEquals("Check that ViewAllChromebookList", testOutput, allChromebook);
 
 	}
 
