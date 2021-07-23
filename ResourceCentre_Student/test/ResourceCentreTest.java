@@ -170,7 +170,22 @@ public class ResourceCentreTest {
 	public void testDoLoanChromebook() {
 		// fail("Not yet implemented");
 		// write your code here
-		
+		//Kidson
+				assertNotNull("Test if there is valid ChromeBook arrayList to load From", chromebookList);
+				ResourceCentre.addChromebook(chromebookList, cb1);
+				
+				Boolean valid = ResourceCentre.doLoanChromebook(chromebookList, "CC0001", "8-8-2020");
+				assertTrue("Test if an item is available to loan", valid);
+				
+				valid = ResourceCentre.doLoanChromebook(chromebookList, "CC0001", "8-8-2020");
+				assertFalse("Test if an item is NOT available for load", valid);
+				
+				valid = ResourceCentre.doLoanChromebook(chromebookList, "CC002", "8-8-2020");
+				assertFalse("Test that item is unavailable for loan", valid);
+				
+				//error condition 
+				valid = ResourceCentre.doLoanChromebook(chromebookList, "CC002", "8-8-2020");
+				assertFalse("Test that item does not exist and is unavailable for loan", valid);
 		
 	}
 
