@@ -101,7 +101,7 @@ public class ResourceCentreTest {
 				//test if the list of camcorders retrieved from the SourceCentre is empty
 						String allChromebook = ResourceCentre.retrieveAllChromebook(chromebookList);
 						String testOutput = "";
-						assertEquals("Check that ViewAllCamcorderlist", testOutput, allChromebook);
+						assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
 						
 				//Given an empty list, after adding 2 items, test if the size of the list is 2
 				ResourceCentre.addChromebook(chromebookList, cb1);
@@ -111,8 +111,8 @@ public class ResourceCentreTest {
 				//test if the expected output string same as the list of camcorders retrieved from the SourceCentre
 				allChromebook = ResourceCentre.retrieveAllChromebook(chromebookList);
 
-				testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n","CC0011", "Nikon HDSLR", "Yes", "", 40);
-				testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n","CC0012", "Sony DSC-RX100M7", "Yes", "", 20);
+				testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n","CB0011", "My Google Chromebook 1st", "Mac OS", 40);
+				testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n","CB0012", "SAMSUNG Chromebook 4+", "Win 10", 20);
 			
 				assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
 	}
